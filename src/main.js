@@ -1,3 +1,11 @@
+/*
+POINTS:
+    60: rehaul the appearance and feel of the game
+    30: simultaneous multiplayer
+    10: give enemy animations
+    10: display timer
+*/
+
 let config = {
     type: Phaser.CANVAS,
     width: 640,
