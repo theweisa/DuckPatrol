@@ -4,7 +4,7 @@ class Play extends Phaser.Scene {
     }
     create() {
         // this.starfield = this.add.tileSprite(0, 0, 640, 480, "starfield").setOrigin(0, 0);
-        this.add.tileSprite(0, 0, 640, 480, "grass bg").setOrigin(0, 0);
+        this.background = this.add.tileSprite(0, 0, 640, 480, "grass bg").setOrigin(0, 0);
 
         this.enemy_spawn_rate = 2;
         this.enemy_spawn_timer = 0;
@@ -100,6 +100,8 @@ class Play extends Phaser.Scene {
     }
 
     update(time, delta) {
+        this.background.tilePositionX  -= 2;
+        
         // check key input for restart
         if (this.gameOver && Phaser.Input.Keyboard.JustDown(keyR)) {
             this.game.sound.stopAll();
