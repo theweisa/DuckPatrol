@@ -6,7 +6,7 @@ class Play extends Phaser.Scene {
         // this.starfield = this.add.tileSprite(0, 0, 640, 480, "starfield").setOrigin(0, 0);
         this.background = this.add.tileSprite(0, 0, 640, 480, "grass bg").setOrigin(0, 0);
 
-        this.enemy_spawn_rate = 2;
+        this.enemy_spawn_rate = 1.5;
         this.enemy_spawn_timer = 0;
         // define ships
         this.ducks = [];
