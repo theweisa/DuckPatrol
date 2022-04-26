@@ -12,6 +12,8 @@ class Duck extends Phaser.GameObjects.Sprite {
         this.quack.setVolume(0.7);
         this.quack.play();
         this.can_collide = true;
+        this.turnCounter = 120;
+        this.maxCountdown = 120;
     }
     flyAway(player) {
         this.can_collide = false;
@@ -22,6 +24,11 @@ class Duck extends Phaser.GameObjects.Sprite {
             this.anims.play("duck fly peanut");
     }
     update() {
+        this.turnCounter -= 1;
+        if (this.turnCounter <= 0){
+            this.moveSpeed *= -1;
+            this.turnCounter = this.maxCountdown * 1.5;
+        }
         if (this.can_collide)
             this.x -= this.moveSpeed;
         else {
